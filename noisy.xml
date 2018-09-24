@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>noisy</Name>
+  <Repository>damianolombardo/noisy</Repository>
+  <Registry>https://hub.docker.com/r/damianolombardo/noisy/~/dockerfile/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/damianolombardo/noisy/</Support>
+  <Project/>
+  <Overview># Noisy&#xD;
+A simple python script that generates random HTTP/DNS traffic noise.&#xD;
+[br][br][b]Converted By Community Applications[/b][br][br]Always verify this template (and values) against the dockerhub support page for the container</Overview>
+  <Category/>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>http://pluspng.com/img-png/free-png-megaphone-announcement-loudspeaker-marketing-megaphone-icon-icon-search-engine-image-308-512.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <DateInstalled>1537010782</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description># Noisy&#xD;
+A simple python script that generates random HTTP/DNS traffic noise.&#xD;
+[br][br][b]Converted By Community Applications[/b][br][br]Always verify this template (and values) against the dockerhub support page for the container</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/noisy/config.json</HostDir>
+      <ContainerDir>/config.json.bak</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="Config File" Target="/config.json.bak" Default="" Mode="rw" Description="Container Path: /config.json" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/noisy/config.json</Config>
+</Container>

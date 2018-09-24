@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>anaconda3</Name>
+  <Repository>damianolombardo/jupyter-anaconda3</Repository>
+  <Registry>https://hub.docker.com/r/continuumio/anaconda3/~/dockerfile/</Registry>
+  <Network>br0</Network>
+  <MyIP>192.168.1.40</MyIP>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/continuumio/anaconda3/</Support>
+  <Project>https://github.com/damianolombardo/unraid-anaconda3</Project>
+  <Overview>&#xD;
+&#xD;
+[b]Converted By Community Applications[/b]</Overview>
+  <Category>Other: Status:Beta</Category>
+  <WebUI>http://[IP]:[PORT:8888]/</WebUI>
+  <TemplateURL/>
+  <Icon>https://secure.gravatar.com/avatar/f3257938262658419b4d2c95011b2e2e.jpg?s=512&amp;amp;r=g&amp;amp;d=mm</Icon>
+  <ExtraParams/>
+  <PostArgs></PostArgs>
+  <CPUset/>
+  <DateInstalled>1537749605</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>&#xD;
+&#xD;
+[b]Converted By Community Applications[/b]</Description>
+  <Networking>
+    <Mode>br0</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8888</HostPort>
+        <ContainerPort>8888</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>7777</HostPort>
+        <ContainerPort/>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/documents/</HostDir>
+      <ContainerDir>/opt/notebooks</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/documents/conda_pkgs_cache</HostDir>
+      <ContainerDir>/opt/conda_pkgs_cache</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/documents/pip_pkgs_cache</HostDir>
+      <ContainerDir>/opt/pip_pkgs_cache</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/documents/.jupyter</HostDir>
+      <ContainerDir>/root/.jupyter</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>scrapy cartopy</Value>
+      <Name>CONDA_PACKAGES</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>ipyparallel autopep8 birdseye</Value>
+      <Name>PIP_PACKAGES</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>/opt/notebooks</Value>
+      <Name>NOTEBOOK_DIR</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>*</Value>
+      <Name>NOTEBOOK_IP</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>8888</Value>
+      <Name>NOTEBOOK_PORT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>jupyter</Value>
+      <Name>NOTEBOOK_PASSWORD</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>99</Value>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Host Path 1" Target="/opt/notebooks" Default="" Mode="rw" Description="Container Path: /opt/notebooks" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/documents/</Config>
+  <Config Name="Host Port 1" Target="8888" Default="" Mode="tcp" Description="Container Port: 8888" Type="Port" Display="always" Required="false" Mask="false">8888</Config>
+  <Config Name="SHELL Environment Variable" Target="SHELL" Default="" Mode="" Description="Container Variable: SHELL" Type="Variable" Display="always" Required="true" Mask="false">/bin/bash</Config>
+  <Config Name="Conda Package Cache" Target="/opt/conda_pkgs_cache" Default="" Mode="rw" Description="Container Path: /opt/conda_pkgs_cache" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/documents/conda_pkgs_cache</Config>
+  <Config Name="PIP Package Cache" Target="/opt/pip_pkgs_cache" Default="" Mode="rw" Description="Container Path:  /root/.cache/pip" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/documents/pip_pkgs_cache</Config>
+  <Config Name="Conda Packages to install" Target="CONDA_PACKAGES" Default="" Mode="" Description="Container Variable: CONDA_PACKAGES" Type="Variable" Display="always" Required="false" Mask="false">scrapy cartopy</Config>
+  <Config Name="PIP Packages to install" Target="PIP_PACKAGES" Default="" Mode="" Description="Container Variable: PIP_PACKAGES" Type="Variable" Display="always" Required="false" Mask="false">ipyparallel autopep8 birdseye</Config>
+  <Config Name="Notebooks directory" Target="NOTEBOOK_DIR" Default="" Mode="" Description="Container Variable: NOTEBOOK_DIR" Type="Variable" Display="always" Required="false" Mask="false">/opt/notebooks</Config>
+  <Config Name="IP to listen on" Target="NOTEBOOK_IP" Default="" Mode="" Description="Container Variable: NOTEBOOK_IP" Type="Variable" Display="always" Required="false" Mask="false">*</Config>
+  <Config Name="Notebook Port" Target="NOTEBOOK_PORT" Default="" Mode="" Description="Container Variable: NOTEBOOK_PORT" Type="Variable" Display="always" Required="false" Mask="false">8888</Config>
+  <Config Name="Notebook password" Target="NOTEBOOK_PASSWORD" Default="" Mode="" Description="Container Variable: NOTEBOOK_PASSWORD" Type="Variable" Display="always" Required="false" Mask="false">jupyter</Config>
+  <Config Name=".jupyter folder" Target="/root/.jupyter" Default="" Mode="rw" Description="Container Path: /root/.jupyter" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/documents/.jupyter</Config>
+  <Config Name="Host Key 8" Target="PUID" Default="" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+  <Config Name="Host Key 9" Target="PGID" Default="" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="Birdseye Port" Target="" Default="" Mode="tcp" Description="Container Port: 7777" Type="Port" Display="always" Required="false" Mask="false">7777</Config>
+</Container>
