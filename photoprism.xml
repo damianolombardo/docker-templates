@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>photoprism</Name>
+  <Repository>photoprism/photoprism</Repository>
+  <Registry>https://hub.docker.com/r/photoprism/photoprism</Registry>
+  <Network>br0</Network>
+  <MyIP>192.168.1.28</MyIP>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview>Personal Photo Management powered by Go and Google TensorFlow&#xD;
+&#xD;
+PhotoPrism&#x2122; is a server-based application for browsing, organizing and sharing your personal photo collection. It makes use of the latest technologies to automatically tag and find pictures without getting in your way. Say goodbye to solutions that force you to upload your visual memories to the cloud.</Overview>
+  <Category/>
+  <WebUI>http://[IP]:[PORT:2342]</WebUI>
+  <TemplateURL/>
+  <Icon>https://github.com/photoprism/photoprism/raw/develop/assets/static/img/favicon.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1593395741</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Personal Photo Management powered by Go and Google TensorFlow&#xD;
+&#xD;
+PhotoPrism&#x2122; is a server-based application for browsing, organizing and sharing your personal photo collection. It makes use of the latest technologies to automatically tag and find pictures without getting in your way. Say goodbye to solutions that force you to upload your visual memories to the cloud.</Description>
+  <Networking>
+    <Mode>br0</Mode>
+    <Publish>
+      <Port>
+        <HostPort>2342</HostPort>
+        <ContainerPort/>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/photos/originals</HostDir>
+      <ContainerDir>/photoprism/originals</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/photos/import</HostDir>
+      <ContainerDir>/photoprism/import</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/photoprisim/</HostDir>
+      <ContainerDir>/photoprism/storage/</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>photoprisim</Value>
+      <Name>PHOTOPRISM_ADMIN_PASSWORD</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>99</Value>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>photoprisim</Value>
+      <Name>PHOTOPRISM_WEBDAV_PASSWORD</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>/photoprism/storage/</Value>
+      <Name>PHOTOPRISM_STORAGE_PATH</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>true</Value>
+      <Name>PHOTOPRISM_UPLOAD_NSFW</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>true</Value>
+      <Name>PHOTOPRISM_DETECT_NSFW</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="originals" Target="/photoprism/originals" Default="/mnt/user/appdata/photoprisim" Mode="rw" Description="Container Path: /photoprism/originals" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/photos/originals</Config>
+  <Config Name="WebUI" Target="" Default="2342" Mode="tcp" Description="Container Port: " Type="Port" Display="always" Required="true" Mask="false">2342</Config>
+  <Config Name="PHOTOPRISM_ADMIN_PASSWORD" Target="PHOTOPRISM_ADMIN_PASSWORD" Default="" Mode="" Description="Container Variable: PHOTOPRISM_ADMIN_PASSWORD" Type="Variable" Display="always" Required="false" Mask="false">photoprisim</Config>
+  <Config Name="Host Path 3" Target="/photoprism/import" Default="" Mode="rw" Description="Container Path: /photoprism/import" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/photos/import</Config>
+  <Config Name="Host Path " Target="/photoprism/storage/" Default="" Mode="rw" Description="Container Path: /photoprism/storage" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/photoprisim/</Config>
+  <Config Name="Host Key 2" Target="PUID" Default="" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+  <Config Name="Host Key 3" Target="PGID" Default="" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="Host Key 4" Target="PHOTOPRISM_WEBDAV_PASSWORD" Default="" Mode="" Description="Container Variable: PHOTOPRISM_WEBDAV_PASSWORD" Type="Variable" Display="always" Required="false" Mask="false">photoprisim</Config>
+  <Config Name="Host Key 5" Target="PHOTOPRISM_STORAGE_PATH" Default="" Mode="" Description="Container Variable: PHOTOPRISM_STORAGE_PATH" Type="Variable" Display="always" Required="false" Mask="false">/photoprism/storage/</Config>
+  <Config Name="Host Key 6" Target="PHOTOPRISM_UPLOAD_NSFW" Default="" Mode="" Description="Container Variable: PHOTOPRISM_UPLOAD_NSFW" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="Host Key 7" Target="PHOTOPRISM_DETECT_NSFW" Default="" Mode="" Description="Container Variable: PHOTOPRISM_DETECT_NSFW" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+</Container>
