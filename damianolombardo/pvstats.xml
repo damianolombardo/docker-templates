@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>pvstats</Name>
+  <Repository>damianolombardo/pvstats</Repository>
+  <Registry>https://hub.docker.com/r/damianolombardo/pvstats/</Registry>
+  <Network>br0</Network>
+  <MyIP>192.168.1.5</MyIP>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/mpfl/pvstats/</Support>
+  <Project/>
+  <Overview># PVStats&#xD;
+&#xD;
+Photovoltaic Inverter Statistics Scanner and Uploader&#xD;
+&#xD;
+PVStats is a tool used to connect to your inverter using Modbus TCP,&#xD;
+scan for various power figures, and then upload the data to various report services.&#xD;
+&#xD;
+Currently supported inverters include:&#xD;
+* Sungrow SG5KTL (TCP and RS485)&#xD;
+* Fronius (WiFi)&#xD;
+* SolaX X1-5.0-T (WiFi)&#xD;
+* Sungrow SH5K-20&#xD;
+* TODO: SMA Sunny Boy&#xD;
+&#xD;
+Currently supported reporting methods include:&#xD;
+* PVOutput.org&#xD;
+* MQTT&#xD;
+* InfluxDB&#xD;
+* TODO: dweet.io</Overview>
+  <Category/>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://cdn3.iconfinder.com/data/icons/flat-rounded-2/50/132-512.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1604235265</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description># PVStats&#xD;
+&#xD;
+Photovoltaic Inverter Statistics Scanner and Uploader&#xD;
+&#xD;
+PVStats is a tool used to connect to your inverter using Modbus TCP,&#xD;
+scan for various power figures, and then upload the data to various report services.&#xD;
+&#xD;
+Currently supported inverters include:&#xD;
+* Sungrow SG5KTL (TCP and RS485)&#xD;
+* Fronius (WiFi)&#xD;
+* SolaX X1-5.0-T (WiFi)&#xD;
+* Sungrow SH5K-20&#xD;
+* TODO: SMA Sunny Boy&#xD;
+&#xD;
+Currently supported reporting methods include:&#xD;
+* PVOutput.org&#xD;
+* MQTT&#xD;
+* InfluxDB&#xD;
+* TODO: dweet.io</Description>
+  <Networking>
+    <Mode>br0</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/pvstats</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="config" Target="/config" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/pvstats</Config>
+</Container>
