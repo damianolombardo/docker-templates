@@ -15,9 +15,9 @@
   <TemplateURL/>
   <Icon>https://secure.gravatar.com/avatar/f3257938262658419b4d2c95011b2e2e.jpg?s=512&amp;amp;r=g&amp;amp;d=mm</Icon>
   <ExtraParams>--hostname=anaconda3 --restart=unless-stopped</ExtraParams>
-  <PostArgs>/bin/bash -c " conda config --prepend pkgs_dirs \$CONDA_CACHE_DIR &amp;amp;&amp;amp; conda install jupyter \$CONDA_PKGS -y &amp;amp;&amp;amp; pip install --no-input \$PIP_PKGS &amp;amp;&amp;amp; jupyter lab"</PostArgs>
+  <PostArgs>/bin/bash -c "curl \$ENTRYPOINT_URL &amp;gt; entrypoint.sh &amp;amp;&amp;amp; chmod +x entrypoint.sh &amp;amp;&amp;amp; ./entrypoint.sh"</PostArgs>
   <CPUset/>
-  <DateInstalled>1622266096</DateInstalled>
+  <DateInstalled>1622287514</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Description>Powerful and flexible python distribution</Description>
@@ -33,7 +33,7 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/documents/jupyter/notebooks</HostDir>
+      <HostDir>/mnt/user/documents/damiano/jupyter/notebooks</HostDir>
       <ContainerDir>/opt/notebooks</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -52,6 +52,11 @@
     <Variable>
       <Value>numpy</Value>
       <Name>CONDA_PKGS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>https://raw.githubusercontent.com/damianolombardo/docker-templates/master/damianolombardo/anaconda3-entrypoint.sh</Value>
+      <Name>ENTRYPOINT_URL</Name>
       <Mode/>
     </Variable>
     <Variable>
@@ -82,10 +87,11 @@
   </Environment>
   <Labels/>
   <Config Name="Jupyter port" Target="8888" Default="" Mode="tcp" Description="Container Port: 8888" Type="Port" Display="always" Required="false" Mask="false">8888</Config>
-  <Config Name="Notebooks directory" Target="/opt/notebooks" Default="" Mode="rw" Description="Container Path: /opt/notebooks" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/documents/jupyter/notebooks</Config>
+  <Config Name="Notebooks directory" Target="/opt/notebooks" Default="" Mode="rw" Description="Container Path: /opt/notebooks" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/documents/damiano/jupyter/notebooks</Config>
   <Config Name="config file location" Target="/opt/data/" Default="" Mode="rw" Description="Container Path: /opt/data/" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/anaconda3/</Config>
   <Config Name="Pip packages to install" Target="PIP_PKGS" Default="" Mode="" Description="Container Variable: PIP_PKGS" Type="Variable" Display="always" Required="false" Mask="false">windrose</Config>
   <Config Name="Conda packages to install" Target="CONDA_PKGS" Default="" Mode="" Description="Container Variable: CONDA_PKGS" Type="Variable" Display="always" Required="false" Mask="false">numpy</Config>
+  <Config Name="Entrypoint Script URL" Target="ENTRYPOINT_URL" Default="" Mode="" Description="Container Variable: ENTRYPOINT_URL " Type="Variable" Display="always" Required="false" Mask="false">https://raw.githubusercontent.com/damianolombardo/docker-templates/master/damianolombardo/anaconda3-entrypoint.sh</Config>
   <Config Name="CONDA_CACHE_DIR" Target="CONDA_CACHE_DIR" Default="" Mode="" Description="Container Variable: CONDA_CACHE_DIR" Type="Variable" Display="advanced" Required="false" Mask="false">/opt/data/conda_cache_dir</Config>
   <Config Name="PIP_CACHE_DIR" Target="PIP_CACHE_DIR" Default="" Mode="" Description="Container Variable: PIP_CACHE_DIR" Type="Variable" Display="advanced" Required="false" Mask="false">/opt/data/pip_cache_dir</Config>
   <Config Name="PUID" Target="PUID" Default="" Mode="" Description="PUID" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
