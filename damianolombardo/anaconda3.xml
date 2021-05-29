@@ -33,7 +33,7 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/documents/damiano/jupyter/notebooks</HostDir>
+      <HostDir>/mnt/user/documents/jupyter/notebooks</HostDir>
       <ContainerDir>/opt/notebooks</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -87,7 +87,7 @@
   </Environment>
   <Labels/>
   <Config Name="Jupyter port" Target="8888" Default="" Mode="tcp" Description="Container Port: 8888" Type="Port" Display="always" Required="false" Mask="false">8888</Config>
-  <Config Name="Notebooks directory" Target="/opt/notebooks" Default="" Mode="rw" Description="Container Path: /opt/notebooks" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/documents/damiano/jupyter/notebooks</Config>
+  <Config Name="Notebooks directory" Target="/opt/notebooks" Default="" Mode="rw" Description="Container Path: /opt/notebooks" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/documents/jupyter/notebooks</Config>
   <Config Name="config file location" Target="/opt/data/" Default="" Mode="rw" Description="Container Path: /opt/data/" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/anaconda3/</Config>
   <Config Name="Pip packages to install" Target="PIP_PKGS" Default="" Mode="" Description="Container Variable: PIP_PKGS" Type="Variable" Display="always" Required="false" Mask="false">windrose</Config>
   <Config Name="Conda packages to install" Target="CONDA_PKGS" Default="" Mode="" Description="Container Variable: CONDA_PKGS" Type="Variable" Display="always" Required="false" Mask="false">numpy</Config>
