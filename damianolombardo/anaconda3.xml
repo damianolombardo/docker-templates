@@ -14,7 +14,7 @@
   <WebUI>http://[IP]:[PORT:8888]</WebUI>
   <TemplateURL/>
   <Icon>https://secure.gravatar.com/avatar/f3257938262658419b4d2c95011b2e2e.jpg?s=512&amp;amp;r=g&amp;amp;d=mm</Icon>
-  <ExtraParams>--hostname=anaconda3 --restart=unless-stopped</ExtraParams>
+  <ExtraParams>--hostname=anaconda3 --restart=unless-stopped -p '8888:8888/tcp'</ExtraParams>
   <PostArgs>/bin/bash -c "curl \$ENTRYPOINT_URL &amp;gt; entrypoint.sh &amp;amp;&amp;amp; chmod +x entrypoint.sh &amp;amp;&amp;amp; ./entrypoint.sh"</PostArgs>
   <CPUset/>
   <DateInstalled>1622287514</DateInstalled>
