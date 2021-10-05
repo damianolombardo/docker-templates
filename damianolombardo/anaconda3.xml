@@ -17,7 +17,7 @@
   <ExtraParams>--hostname=anaconda3 --restart=unless-stopped -p '8888:8888/tcp'</ExtraParams>
   <PostArgs>/bin/bash -c "curl \$ENTRYPOINT_URL &amp;gt; entrypoint.sh &amp;amp;&amp;amp; chmod +x entrypoint.sh &amp;amp;&amp;amp; ./entrypoint.sh"</PostArgs>
   <CPUset/>
-  <DateInstalled>1633350448</DateInstalled>
+  <DateInstalled>1633444916</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Description>Powerful and flexible python distribution</Description>
@@ -34,7 +34,7 @@
   <Data>
     <Volume>
       <HostDir>/mnt/user/development</HostDir>
-      <ContainerDir>/opt/notebooks</ContainerDir>
+      <ContainerDir>/opt/src</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
@@ -60,8 +60,13 @@
       <Mode/>
     </Variable>
     <Variable>
-      <Value>notebook</Value>
+      <Value>nbclassic</Value>
       <Name>NOTEBOOK_OR_LAB</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>*</Value>
+      <Name>IP</Name>
       <Mode/>
     </Variable>
     <Variable>
@@ -92,12 +97,13 @@
   </Environment>
   <Labels/>
   <Config Name="Jupyter port" Target="8888" Default="" Mode="tcp" Description="Container Port: 8888" Type="Port" Display="always" Required="false" Mask="false">8888</Config>
-  <Config Name="Notebooks directory" Target="/opt/notebooks" Default="" Mode="rw" Description="Container Path: /opt/notebooks" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/development</Config>
+  <Config Name="Notebooks directory" Target="/opt/src" Default="" Mode="rw" Description="Container Path: /opt/src" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/development</Config>
   <Config Name="config file location" Target="/opt/data/" Default="" Mode="rw" Description="Container Path: /opt/data/" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/anaconda3/</Config>
   <Config Name="Pip packages to install" Target="PIP_PKGS" Default="" Mode="" Description="Container Variable: PIP_PKGS" Type="Variable" Display="always" Required="false" Mask="false">windrose influxdb</Config>
   <Config Name="Conda packages to install" Target="CONDA_PKGS" Default="" Mode="" Description="Container Variable: CONDA_PKGS" Type="Variable" Display="always" Required="false" Mask="false">seaborn</Config>
-  <Config Name="Entrypoint Script URL" Target="ENTRYPOINT_URL" Default="" Mode="" Description="Container Variable: ENTRYPOINT_URL " Type="Variable" Display="always" Required="false" Mask="false">https://raw.githubusercontent.com/damianolombardo/docker-templates/master/damianolombardo/anaconda3-entrypoint.sh</Config>
-  <Config Name="Jupyter Notebook or Lab" Target="NOTEBOOK_OR_LAB" Default="notebook" Mode="" Description="Container Variable: NOTEBOOK_OR_LAB" Type="Variable" Display="always" Required="false" Mask="false">notebook</Config>
+  <Config Name="Entrypoint Script URL" Target="ENTRYPOINT_URL" Default="" Mode="" Description="Container Variable: ENTRYPOINT_URL " Type="Variable" Display="always" Required="false" Mask="false">file:///opt/data/configs/jupyter/entrypoint.sh</Config>
+  <Config Name="Jupyter Notebook or Lab" Target="NOTEBOOK_OR_LAB" Default="notebook" Mode="" Description="Container Variable: NOTEBOOK_OR_LAB" Type="Variable" Display="always" Required="false" Mask="false">nbclassic</Config>
+  <Config Name="IP address" Target="IP" Default="" Mode="" Description="Container Variable: IP" Type="Variable" Display="always" Required="false" Mask="false">*</Config>
   <Config Name="CONDA_CACHE_DIR" Target="CONDA_CACHE_DIR" Default="" Mode="" Description="Container Variable: CONDA_CACHE_DIR" Type="Variable" Display="advanced" Required="false" Mask="false">/opt/data/conda_cache_dir</Config>
   <Config Name="PIP_CACHE_DIR" Target="PIP_CACHE_DIR" Default="" Mode="" Description="Container Variable: PIP_CACHE_DIR" Type="Variable" Display="advanced" Required="false" Mask="false">/opt/data/pip_cache_dir</Config>
   <Config Name="PUID" Target="PUID" Default="" Mode="" Description="PUID" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
