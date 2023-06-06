@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>ARM</Name>
+  <Repository>1337server/automatic-ripping-machine</Repository>
+  <Registry>https://hub.docker.com/r/1337server/automatic-ripping-machine</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>true</Privileged>
+  <Support/>
+  <Project>https://github.com/automatic-ripping-machine/automatic-ripping-machine</Project>
+  <Overview>Automatic Ripping Machine. Insert an optical disc (Blu-Ray, DVD, CD) and checks to see if it's audio, video (Movie or TV), or data, then rips it.</Overview>
+  <Category>Backup: MediaApp:Other Status:Stable</Category>
+  <WebUI>http://[IP]:[PORT:8484]</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/automatic-ripping-machine/automatic-ripping-machine/v2_master/arm/ui/static/img/android-chrome-192x192.png</Icon>
+  <ExtraParams>--restart=unless-stopped --hostname=arm</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1686067693</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="WebUI Port" Target="8080" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">8484</Config>
+  <Config Name="ARM folder" Target="/home/arm" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/arm</Config>
+  <Config Name="PUID" Target="PUID" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="UID" Target="UID" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+  <Config Name="GID" Target="GID" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="Config folder" Target="/home/arm/config" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/arm/config</Config>
+  <Config Name="Logs" Target="/home/logs" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/arm/logs</Config>
+  <Config Name="Music" Target="/home/arm/Music" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/recordings/Music</Config>
+  <Config Name="media" Target="/home/arm/media" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/recordings/</Config>
+</Container>
