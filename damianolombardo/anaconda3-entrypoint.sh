@@ -1,4 +1,8 @@
 #!/bin/bash
+
+conda init bash
+source ~/.bashrc
+
 conda config --prepend pkgs_dirs $CONDA_CACHE_DIR 
 if [ -n "${DEFAULT_CONDA_ENV}" ]; then conda activate $DEFAULT_CONDA_ENV; fi
 conda install --file /opt/data/conda.txt -y 
