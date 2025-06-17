@@ -9,10 +9,6 @@ echo "PUID env var: $PUID"
 echo "PGID env var: $PGID"
 echo "=================="
 
-# Initialize conda for bash shell
-conda init bash
-source ~/.bashrc
-
 conda config --prepend pkgs_dirs $CONDA_CACHE_DIR 
 conda install --file /opt/data/conda.txt -y 
 pip install --no-input -r /opt/data/pip.txt 
