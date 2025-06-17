@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# Debug: Show current user info
+echo "=== DEBUG INFO ==="
+echo "Current user: $(whoami)"
+echo "Current UID: $(id -u)"
+echo "Current GID: $(id -g)"
+echo "PUID env var: $PUID"
+echo "PGID env var: $PGID"
+echo "=================="
+
 # Initialize conda for bash shell
 conda init bash
 source ~/.bashrc
